@@ -15,11 +15,11 @@ export const currentTodoes = [{
     "task": "Read for 1 hour",
     "complete": false
 },{
-    "id" : 4,
+    "id" : 5,
     "task": "Pick up groceries",
     "complete": false
 },{
-    "id" : 5,
+    "id" : 6,
     "task": "Complete Todo App on Frontend Mentor",
     "complete": false
 }];

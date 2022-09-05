@@ -8,9 +8,10 @@ import ToDoList from "./ToDoList";
  
 function App(){
     const [toDoList, setToDoList] = useState(currentTodoes);
+    console.log(toDoList);
     return <div>
         <Header/>
-        <CreateTodo/>
+        <CreateTodo setToDoList={setToDoList} />
         <ToDoList toDoList={toDoList}/>
     </div>
 }
