@@ -1,13 +1,46 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: #F2F2F2;
+    background-image: url(./images/bg-mobile-light.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.createTodo {
+    display: flex;
+    flex-direction: row;
+    background: #FFFFFF;
+    height: 48px;
+    width: 327px;
+    border-radius: 5px;
+
+}
+
+.checkbox {
+    border-color: #D1D2DA;
+    border-radius: 50%;
+}
+
+textarea {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sun {
+    height: 20px;
+    width: 20px;
+}
+
+.moon {
+    height: 20px;
+    width: 20px;
 }
