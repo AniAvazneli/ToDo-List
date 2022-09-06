@@ -1,23 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #F2F2F2;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 327px;
+}
+
+.todoHeadline {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 25px;
+    letter-spacing: 6px;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+    margin-top: 48px;
+}
+
+.card {
     background-image: url(./images/bg-mobile-light.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 375px;
 }
 
 .createTodo {
     display: flex;
     flex-direction: row;
+    align-items: center;
     background: #FFFFFF;
     height: 48px;
     width: 327px;
     border-radius: 5px;
-
 }
 
 .checkbox {
     border-color: #D1D2DA;
-    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    margin-right: 12px;
+    cursor: pointer;
 }
 
 textarea {
@@ -43,4 +78,242 @@ textarea {
 .moon {
     height: 20px;
     width: 20px;
+}
+
+.headerImages {
+    cursor: pointer;
+}
+
+.checkboxTextarea {
+    border: 0;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.166667px;
+    color: #9495A5;
+
+}
+
+.checkboxTextarea:focus {
+    outline: 1px;
+}
+
+.TodoList {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 327px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    list-style-type: none;
+    padding-inline-start: 0px
+}
+
+.xImage {
+    height: 12px;
+    width: 12px;
+    margin-right: 20px;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.todoesWithoutHr {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+hr {
+    height: 1px;
+    width: 327px;
+    border: 0px;
+    background: #E3E4F1;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.todoTexts {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.166667px;
+    color: #494C6B;
+}
+
+.todoesWithoutX {
+    display: flex;
+    flex-direction: row;
+}
+
+.bottomFooter {
+    height: 48px;
+    width: 327px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #FFFFFF;
+    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    border-radius: 5px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.194444px;
+    color: #9495A5;
+}
+
+.bottomFooterTextAll {
+    margin-left: 81px;
+    color: #3A7CFD;
+}
+
+.bottomFooterTextComplited {
+    margin-right: 80px;
+}
+
+.BottromOfCard {
+    height: 48px;
+    width: 327px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #FFFFFF;
+    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    margin-top: 0px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row;
+    transform: translateY(-33%);
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.166667px;
+    color: #9495A5;
+}
+
+.itemsLeft {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+
+}
+
+.forFont {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: right;
+    letter-spacing: -0.166667px;
+    color: #9495A5;
+}
+
+.clearComplete {
+    margin-right: 20px;
+}
+
+.numberOfTodoes {
+    margin-right: 3px;
+}
+
+.footerLowText {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: -0.194444px;
+    color: #9495A5;
+    margin-top: 40px;
+}
+
+button {
+    border: 0px;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.bottomFooterTextActive {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height */
+
+    letter-spacing: -0.194444px;
+
+    color: #9495A5;
+}
+
+.bottomFooterTextComplited {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height */
+
+    letter-spacing: -0.194444px;
+
+    color: #9495A5;
+
+}
+
+.bottomFooterTextAll {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height */
+
+    letter-spacing: -0.194444px;
+
+    color: #3A7CFD;
+}
+
+.TodoList input {
+    -webkit-appearance: none;
+    border: 1px solid hsl(234, 11%, 52%);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.TodoList input:checked {
+    background: url('images/icon-check.svg'), linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+
+.isDone {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.166667px;
+    text-decoration-line: line-through;
 }

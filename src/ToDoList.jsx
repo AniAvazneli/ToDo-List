@@ -4,10 +4,12 @@ import ToDo from './Todo';
  
 const ToDoList = (props) => {
    return (
-       <ul>
+       <ul className='TodoList'>
            {props.toDoList.map(todo => {
                return (
-                   <ToDo key={todo.id} todo={todo} />
+                <div key={todo.id}>
+                   <ToDo reNewStuatus={props.reNewStuatus} todo={todo} />
+                </div>
                )
            })}
        </ul>

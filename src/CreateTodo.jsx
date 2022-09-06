@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const CreateTodo = (props) => {
     const [textareaValue, setTextareaValue] = useState("");
+    const [checkedStatus, setCheckedStatus] = useState(false);
     const pickValue = (event) => {
         setTextareaValue(event.target.value);
     }
@@ -15,9 +16,20 @@ const CreateTodo = (props) => {
             setTextareaValue("");
         }
     }
+    const checkBoxClick = (e) => {
+        if (textareaValue){
+            props.setToDoList((prev) => [...prev, {
+                id: Math.random(),
+                task: textareaValue,
+                complete: false
+            }]);
+            setTextareaValue("");
+            setCheckedStatus(false);
+        }
+    }
     return (<div className="createTodo">
-        <input className="checkbox" type="checkbox" />
-        <input type="text" onKeyDown={handleClick} onChange={pickValue} value={textareaValue} placeholder="Create a new todo…" />
+        <input onChange={checkBoxClick} checked={checkedStatus} className="checkbox" type="radio" />
+        <input type="text" onKeyDown={handleClick} className="checkboxTextarea" onChange={pickValue} value={textareaValue} placeholder="Create a new todo…" />
     </div>);
 }
 
