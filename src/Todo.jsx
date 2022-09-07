@@ -3,36 +3,23 @@ import { useState } from 'react';
 import Cross from './images/icon-cross.svg';
 
 const ToDo = (props) => {
-    const [todoClass, setTodoClass] = useState("");
-    const isLoggedIn = false;
-    const handleChange = event => {
-        if (event.target.checked) {
-            props.reNewStuatus(props.todo.id, true);
-            setTodoClass("isDone");
-        } else {
-            props.reNewStuatus(props.todo.id, false);
-            setTodoClass("");
-        }
-    };
-    const removeChecked = event =>{
-        if (event.target.checked) {
-            props.reNewStuatus(props.todo.id, false);
-            setTodoClass("");
-        } else {
-            props.reNewStuatus(props.todo.id, true);
-            setTodoClass("isDone");
-        }
-    }
+    // const [todoClass, setTodoClass] = useState("");
+    const [btnState, setBtnState] = useState(false);
+    function handleClick(){
+        setBtnState(!btnState);
+        console.log(btnState);
+    } 
+    
 
     return (
-        <li className={`listItem ${todoClass}`}>
+        <li className={`listItem`}>
             <div className="todoesWithoutHr">
                 <div className='todoesWithoutX'>
-                    <input onChange={handleChange} onClick={removeChecked} className="checkbox" type="radio" />
-                    <h3 className="todoTexts">{props.todo.task}</h3>
+                    <input onChange={handleClick} className={`checkbox ${btnState ? "active": ""}`} type="checkbox" />
+                    <h3 className={`todoTexts ${btnState ? "active": ""}`}>{props.todo.task}</h3>
                 </div>
                 <button>
-                    <img className="xImage" src={Cross} alt="cross" style={isLoggedIn ? styles.cross : styles.other} />
+                    <img className="xImage" src={Cross} alt="cross" />
                 </button>
             </div>
             <hr></hr>
@@ -42,9 +29,3 @@ const ToDo = (props) => {
 
 export default ToDo;
 
-const styles = {
-    cross: {
-        width: 12,
-        backgroundColor: 'red'
-    }
-};
