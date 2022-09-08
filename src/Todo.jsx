@@ -3,23 +3,30 @@ import { useState } from 'react';
 import Cross from './images/icon-cross.svg';
 
 const ToDo = (props) => {
-    // const [todoClass, setTodoClass] = useState("");
     const [btnState, setBtnState] = useState(false);
-    function handleClick(){
-        setBtnState(!btnState);
-        console.log(btnState);
-    } 
-    
+    function handleClick() {
+        setBtnState(!props.todo.complete);
+        if (props.todo.complete) {
+            props.reNewStuatus(props.todo.id, false);
+        } else {
+            props.reNewStuatus(props.todo.id, true);
+        }
+    }
+
+    const deleteHendler = () => {
+        props.deleteTodo(props.todo.id);
+    }
+
 
     return (
         <li className={`listItem`}>
             <div className="todoesWithoutHr">
                 <div className='todoesWithoutX'>
-                    <input onChange={handleClick} className={`checkbox ${btnState ? "active": ""}`} type="checkbox" />
-                    <h3 className={`todoTexts ${btnState ? "active": ""}`}>{props.todo.task}</h3>
+                    <input id={props.todo.id} checked={props.todo.complete} onChange={handleClick} className={`checkbox ${props.todo.complete ? "active" : props.todo.all}`} type="checkbox" />
+                    <label htmlFor={props.todo.id} className={`todoTexts ${props.todo.complete ? "active" : ""}`}>{props.todo.task}</label>
                 </div>
-                <button>
-                    <img className="xImage" src={Cross} alt="cross" />
+                <button onClick={deleteHendler}>
+                    <img  className="xImage" src={Cross} alt="cross" />
                 </button>
             </div>
             <hr></hr>
@@ -28,4 +35,3 @@ const ToDo = (props) => {
 };
 
 export default ToDo;
-

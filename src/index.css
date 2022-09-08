@@ -154,6 +154,7 @@ hr {
 .todoesWithoutX {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .bottomFooter {
@@ -300,6 +301,14 @@ button {
 .checkbox{
     border-radius: 50%;
     border: 1px solid hsl(234, 11%, 52%);
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
 }
 input.active {
     background: url('images/icon-check.svg'), linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
@@ -321,7 +330,7 @@ input.active {
     margin-right: 10px;
     cursor: pointer;
 }
-h3.active{
+label.active{
     font-family: 'Josefin Sans';
     font-style: normal;
     font-weight: 400;
