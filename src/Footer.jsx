@@ -1,5 +1,3 @@
-import ToDoList from "./ToDoList";
-
 const Footer = (props) => {
     const ShowCompleted = () => {
         props.onlyCompleted();
