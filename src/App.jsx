@@ -1,5 +1,3 @@
-// import React from 'react';
-//components
 import React, { useState } from 'react';
 import { currentTodoes } from "./CurrentTodoes.js";
 import Header from "./Header";
@@ -8,6 +6,7 @@ import ToDoList from "./ToDoList";
 import Footer from './Footer.jsx';
 
 function App() {
+    const [darkMode, setDarkMode] = useState(true);
     const [toDoList, setToDoList] = useState(currentTodoes);
     const listOfDone = toDoList.filter((element) => element.complete);
     const listOfActive = toDoList.filter((element) => !element.complete);
@@ -34,19 +33,26 @@ function App() {
     }
 
     const deleteTodo = (id) => {
-        const removeTodoIndex = toDoList.findIndex((e)=> e.id === id);
-        // copies list
+        const removeTodoIndex = toDoList.findIndex((e) => e.id === id);
         const removeList = toDoList.slice();
-        removeList.splice(removeTodoIndex,1);
+        removeList.splice(removeTodoIndex, 1);
         setToDoList(removeList);
+    }
+    const changeTheme = () => {
+        setDarkMode(!darkMode);
+        if(darkMode){
+            document.querySelector("body").style.backgroundColor = "#393A4B"
+        }else{
+            document.querySelector("body").style.backgroundColor = "#F2F2F2"
+        }
     }
 
 
-    return <div className='card'>
-        <Header />
-        <CreateTodo setToDoList={setToDoList} />
-        <ToDoList deleteTodo={deleteTodo}  reNewStuatus={reNewStuatus} toDoList={activeFilter === "all" ? toDoList : activeFilter === "completed" ? listOfDone : listOfActive} />
-        <Footer onlyCompleted={onlyCompleted} onlyActive={onlyActive} clearCompleted={clearCompleted} all={all} toDoList={toDoList} />
+    return <div className= {darkMode ? "card": "nightCard"}>
+        <Header changeTheme={changeTheme} darkMode={darkMode}/>
+        <CreateTodo changeTheme={changeTheme} darkMode={darkMode} setToDoList={setToDoList} />
+        <ToDoList changeTheme={changeTheme} darkMode={darkMode} deleteTodo={deleteTodo} reNewStuatus={reNewStuatus} toDoList={activeFilter === "all" ? toDoList : activeFilter === "completed" ? listOfDone : listOfActive} />
+        <Footer changeTheme={changeTheme} darkMode={darkMode} onlyCompleted={onlyCompleted} onlyActive={onlyActive} clearCompleted={clearCompleted} all={all} toDoList={toDoList} />
     </div>
 }
 

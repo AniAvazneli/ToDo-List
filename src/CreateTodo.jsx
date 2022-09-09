@@ -27,9 +27,9 @@ const CreateTodo = (props) => {
             setCheckedStatus(false);
         }
     }
-    return (<div className="createTodo">
-        <input onChange={checkBoxClick} checked={checkedStatus} className="checkbox" type="radio" />
-        <input type="text" onKeyDown={handleClick} className="checkboxTextarea" onChange={pickValue} value={textareaValue} placeholder="Create a new todo…" />
+    return (<div className={props.darkMode ? "createTodo": "createTodoDark"}>
+        <input onChange={checkBoxClick} checked={checkedStatus} className={props.darkMode ? "checkbox" : "darkcheckbox"} type="radio" />
+        <input type="text" onKeyDown={handleClick} className={props.darkMode ? "checkboxTextarea" : "darkcheckboxTextarea"} onChange={pickValue} value={textareaValue} placeholder="Create a new todo…" />
     </div>);
 }
 

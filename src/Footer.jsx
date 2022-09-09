@@ -17,7 +17,7 @@ const Footer = (props) => {
     const lefted = props.toDoList.filter((todo) => !todo.complete)
     return <div>
         <div>
-            <div className="BottromOfCard">
+            <div className={props.darkMode ? "BottromOfCard" : "BottromOfCardDarck"}>
                 <button className="itemsLeft">
                     <h3 className="numberOfTodoes forFont">{lefted.length}</h3>
                     <h3 className="forFont">items left</h3>
@@ -26,7 +26,7 @@ const Footer = (props) => {
                     Clear Completed
                 </button>
             </div>
-            <div className="bottomFooter">
+            <div className={props.darkMode ? "bottomFooter" : "darkbottomFooter"}>
                 <button onClick={ShowAll} className="bottomFooterTextAll" >All</button>
                 <button onClick={ShowActive} className="bottomFooterTextActive" >Active</button>
                 <button onClick={ShowCompleted} className="bottomFooterTextComplited" >Completed</button>

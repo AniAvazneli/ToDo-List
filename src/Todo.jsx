@@ -22,11 +22,11 @@ const ToDo = (props) => {
         <li className={`listItem`}>
             <div className="todoesWithoutHr">
                 <div className='todoesWithoutX'>
-                    <input id={props.todo.id} checked={props.todo.complete} onChange={handleClick} className={`checkbox ${props.todo.complete ? "active" : props.todo.all}`} type="checkbox" />
+                    <input id={props.todo.id} checked={props.todo.complete} onChange={handleClick} className={`checkbox ${props.todo.complete ? "active" : props.todo.all} ${props.darkmode ? "" :"darkCheckbox"}`}  type="checkbox" />
                     <label htmlFor={props.todo.id} className={`todoTexts ${props.todo.complete ? "active" : ""}`}>{props.todo.task}</label>
                 </div>
-                <button onClick={deleteHendler}>
-                    <img  className="xImage" src={Cross} alt="cross" />
+                <button className='deleteBtn' onClick={deleteHendler}>
+                    <img className='xImage' src={Cross} alt="cross" />
                 </button>
             </div>
             <hr></hr>

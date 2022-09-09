@@ -7,8 +7,8 @@ const ToDoList = (props) => {
        <ul className='TodoList'>
            {props.toDoList.map(todo => {
                return (
-                <div key={todo.id}>
-                   <ToDo deleteTodo={props.deleteTodo}  reNewStuatus={props.reNewStuatus} todo={todo} />
+                <div className={props.darkMode ? "" :"darkList"} key={todo.id}>
+                   <ToDo darkmode={props.darkMode} deleteTodo={props.deleteTodo}  reNewStuatus={props.reNewStuatus} todo={todo} />
                 </div>
                )
            })}
